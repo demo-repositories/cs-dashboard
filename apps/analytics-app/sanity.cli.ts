@@ -1,11 +1,4 @@
-import {
-  defineApplication,
-  defineCliConfig,
-  definePanelView,
-  defineTileView,
-  defineWebWorker,
-  defineWindowView,
-} from "sanity/cli";
+import { defineApplication, defineCliConfig } from "sanity/cli";
 
 const organizationId = process.env.SANITY_APP_ORGANIZATION_ID;
 
@@ -19,28 +12,14 @@ export default defineCliConfig({
     name: "analytics-app",
     slug: "analytics-app",
     organizationId,
-    // entry: "./src/App.tsx",
+    entry: "./src/App.tsx",
     views: [
-      defineWindowView({
-        name: "main",
-        title: "Analytics",
-        src: "./src/window.tsx",
-      }),
-      defineTileView({
-        name: "circulation",
-        title: "Circulation",
-        src: "./src/tile.tsx",
-        size: "large",
-        order: 10,
-      }),
-      definePanelView({
-        name: "analytics",
-        title: "Analytics Panel",
-        src: "./src/panel.tsx",
-      }),
+      // known issue with window views so use the entry for displaying the app
+      // defineWindowView({
+      //   name: "main",
+      //   title: "Analytics",
+      //   src: "./src/window.tsx",
+      // }),
     ],
-    // webWorkers: [
-    //   defineWebWorker({name: 'sync', title: 'Content sync', src: './src/worker.ts'}),
-    // ],
   }),
 });

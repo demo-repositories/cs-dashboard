@@ -15,7 +15,6 @@ function Desk() {
   const navigate = useNavigate(({ path }) => {
     setArticleId(articleIdFromPath(path));
   });
-  usePublishArticle(articleId);
 
   function openArticle(documentId: string) {
     setArticleId(documentId);
