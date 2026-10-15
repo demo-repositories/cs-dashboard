@@ -1,4 +1,8 @@
-import { defineApplication, defineCliConfig } from "sanity/cli";
+import {
+  defineApplication,
+  defineCliConfig,
+  definePanelView,
+} from "sanity/cli";
 
 const organizationId = process.env.SANITY_APP_ORGANIZATION_ID;
 
@@ -20,6 +24,11 @@ export default defineCliConfig({
       //   title: "Analytics",
       //   src: "./src/window.tsx",
       // }),
+      definePanelView({
+        name: "activity",
+        title: "Analytics panel",
+        src: "./src/panel.tsx",
+      }),
     ],
   }),
 });

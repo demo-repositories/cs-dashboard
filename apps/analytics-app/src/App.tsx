@@ -1,8 +1,12 @@
-import { Suspense, useState } from "react";
-import { useNavigate } from "@sanity/sdk-react/dashboard";
+import { Suspense, useMemo, useState } from "react";
+import {
+  useNavigate,
+  useApplicationContext,
+} from "@sanity/sdk-react/dashboard";
 import { ArticleHistory } from "./article-history";
 import { ArticleList } from "./article-list";
 import { Providers } from "./Providers";
+import { studioDataset, studioProjectId } from "./studio";
 
 function articleIdFromPath(path: string) {
   const match = path.match(/^articles\/([^/?#]+)/);
@@ -15,8 +19,22 @@ function Desk() {
     setArticleId(articleIdFromPath(path));
   });
 
+  const context = useMemo(
+    () => ({
+      resource: {
+        id: `${studioProjectId}.${studioDataset}`,
+        type: "dataset" as const,
+      },
+      document: { id: articleId },
+    }),
+    [articleId],
+  );
+
+  useApplicationContext(context);
+
   function openArticle(documentId: string) {
     setArticleId(documentId);
+
     navigate({ path: `articles/${documentId}` });
   }
 
