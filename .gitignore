@@ -1,0 +1,11 @@
+node_modules
+.turbo
+.pnpm-store
+dist
+.next
+.DS_Store
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+apps/web/sanity/**/extract.json

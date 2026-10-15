@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+.desk,
+.panel,
+.tile {
+  color: #1b140e;
+  background:
+    radial-gradient(circle at 0 0, rgba(194, 65, 12, 0.14), transparent 28%),
+    repeating-linear-gradient(180deg, transparent, transparent 27px, rgba(27, 20, 14, 0.05) 28px),
+    #f3ecdf;
+  font-family: "Fraunces", "Iowan Old Style", Palatino, serif;
+}
+
+.desk,
+.panel {
+  min-height: 100%;
+  padding: 1.4rem 1.5rem 2.4rem;
+  box-sizing: border-box;
+}
+
+.doc-id {
+  margin: 0.45rem 0 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  word-break: break-all;
+}
+
+.kicker,
+.story-meta,
+.hour-label,
+.note,
+.status,
+.tile-caption,
+.totals dt {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 0.68rem;
+  color: #c2410c;
+}
+
+.mast h1,
+.history h2 {
+  margin: 0.2rem 0 0;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.mast h1 {
+  font-size: clamp(3.2rem, 8vw, 5.4rem);
+}
+
+.lede,
+.dek,
+.note {
+  max-width: 38rem;
+  line-height: 1.35;
+}
+
+.lede {
+  margin: 0.7rem 0 0;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.index {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.story {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0.9rem 0.95rem 0.8rem;
+  text-align: left;
+  color: inherit;
+  background: rgba(255, 250, 242, 0.72);
+  border: 0;
+  border-left: 4px solid #1b140e;
+  cursor: pointer;
+}
+
+.story:hover,
+.story:focus-visible {
+  border-left-color: #c2410c;
+  outline: 2px solid #c2410c;
+  outline-offset: 2px;
+}
+
+.story-title,
+.history h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.story-title {
+  font-weight: 560;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.dek {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.story-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.25rem;
+  font-size: 0.68rem;
+}
+
+.story-meta strong {
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.95rem;
+}
+
+.spark {
+  display: flex;
+  align-items: end;
+  gap: 2px;
+  height: 28px;
+  margin-top: 0.35rem;
+}
+
+.spark i {
+  flex: 1;
+  background: #1b140e;
+}
+
+.back {
+  margin: 0 0 0.8rem;
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.history h3 {
+  margin: 1.4rem 0 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 520;
+}
+
+.totals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.1rem 0 0;
+}
+
+.totals div {
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(27, 20, 14, 0.2);
+}
+
+.totals dt {
+  font-size: 0.62rem;
+}
+
+.totals dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  gap: 0.25rem;
+  height: 180px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hours li {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-width: 0;
+  height: 100%;
+}
+
+.bar {
+  display: block;
+  background: #1b140e;
+}
+
+.hours li:last-child .bar {
+  background: #c2410c;
+}
+
+.hour-label {
+  margin-top: 0.3rem;
+  font-size: 0.55rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.note,
+.status {
+  font-size: 0.72rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.tile {
+  height: 100%;
+  padding: 0.9rem 1rem;
+  box-sizing: border-box;
+}
+
+.tile-count {
+  margin: 0.3rem 0 0;
+  font-size: 3rem;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+.tile-caption {
+  margin: 0.45rem 0 0;
+  font-size: 0.68rem;
+}
+
+.tile-select {
+  display: block;
+  margin-top: 0.55rem;
+}
+
+.tile-select select {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.2rem 0;
+  color: inherit;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #1b140e;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  .totals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hours {
+    overflow-x: auto;
+  }
+}
