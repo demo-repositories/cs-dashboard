@@ -1,7 +1,6 @@
 import { Suspense, useState } from "react";
 import { useNavigate } from "@sanity/sdk-react/dashboard";
 import { unstable_defineView } from "sanity/dashboard";
-import { usePublishArticle } from "./article-context";
 import { ArticleHistory } from "./article-history";
 import { ArticleList } from "./article-list";
 import { Providers } from "./Providers";
@@ -16,7 +15,6 @@ function Desk() {
   const navigate = useNavigate(({ path }) => {
     setArticleId(articleIdFromPath(path));
   });
-  usePublishArticle(articleId);
 
   function openArticle(documentId: string) {
     setArticleId(documentId);

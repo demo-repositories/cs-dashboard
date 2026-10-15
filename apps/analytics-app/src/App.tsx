@@ -1,6 +1,5 @@
 import { Suspense, useState } from "react";
 import { useNavigate } from "@sanity/sdk-react/dashboard";
-import { usePublishArticle } from "./article-context";
 import { ArticleHistory } from "./article-history";
 import { ArticleList } from "./article-list";
 import { Providers } from "./Providers";
